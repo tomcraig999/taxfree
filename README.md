@@ -54,7 +54,13 @@ This will serve the production build at [http://localhost:8080](http://localhost
 
 ### Deploying to GitHub Pages
 
-1. Run the deploy script:
+The project is set up with GitHub Actions for automatic deployment to GitHub Pages. When you push changes to the `main` branch, the GitHub Actions workflow will automatically:
+
+1. Build the Next.js app
+2. Deploy the built files to the `gh-pages` branch
+3. Make the site available at your GitHub Pages URL
+
+You can also manually deploy by running:
 
 ```bash
 npm run deploy
@@ -64,7 +70,14 @@ This will:
 - Build the Next.js app
 - Copy the build files to the `gh-pages` directory
 
-2. Push the contents of the `gh-pages` directory to your GitHub Pages repository.
+After running this script, you can push the changes to the `gh-pages` branch:
+
+```bash
+git checkout gh-pages
+git add .
+git commit -m "Deploy to GitHub Pages"
+git push origin gh-pages
+```
 
 ### Deploying to Other Static Hosting Services
 
